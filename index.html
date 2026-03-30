@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>xxx · 运营经理简历</title>
+    <!-- 使用柔和的现代字体方案 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 图标库 (用于显示图标) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #eef2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            line-height: 1.5;
+            color: #1a2634;
+        }
+
+        .resume-card {
+            max-width: 1000px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar {
+            background-color: #f4f7fa;
+            padding: 2rem 1.5rem;
+            border-right: 1px solid #e0e7ed;
+        }
+
+        .profile-header {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #4a90e2, #7c6aff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 500;
+            box-shadow: 0 8px 14px rgba(74, 144, 226, 0.2);
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+            color: #0a1927;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4a6a85;
+            background: rgba(74, 144, 226, 0.08);
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            margin-top: 0.25rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: #2c3e50;
+            margin: 1.8rem 0 1rem 0;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid rgba(74, 144, 226, 0.3);
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.7rem;
+            font-size: 0.9rem;
+            color: #334e68;
+            word-break: break-word;
+        }
+
+        .contact-info i {
+            width: 20px;
+            color: #4a90e2;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: white;
+            color: #1e3347;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.2rem 0.25rem;
+            border: 1px solid #d0ddee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .main-content {
+            background-color: white;
+            padding: 2rem 2rem 2rem 1.8rem;
+        }
+
+        .main-section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: #1e3347;
+            margin: 1.5rem 0 1rem 0;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #4a90e2;
+            display: inline-block;
+        }
+
+        /* 加粗样式优化 */
+        strong, .bold-text {
+            font-weight: 700;
+            color: #2c3e50;
+            background: linear-gradient(120deg, rgba(74,144,226,0.1) 0%, rgba(74,144,226,0) 80%);
+            padding: 0 2px;
+        }
+
+        /* 数据加粗特殊样式 */
+        .data-bold {
+            font-weight: 700;
+            color: #4a90e2;
+            font-size: 1.02em;
+        }
+
+        /* 个人优势列表模式 - 改为1x4纵向陈列 */
+        .advantage-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .advantage-card {
+            background: #f8fafd;
+            border-radius: 16px;
+            padding: 1.2rem 1.2rem;
+            border-left: 4px solid #4a90e2;
+            /* 阴影改到右下角，增加透明度 */
+            box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .advantage-card:hover {
+            transform: translateX(4px);
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .advantage-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1e3347;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .advantage-title i {
+            color: #4a90e2;
+            font-size: 1.1rem;
+            width: 20px;
+        }
+
+        .advantage-desc {
+            font-size: 0.9rem;
+            color: #2d4055;
+            line-height: 1.5;
+        }
+
+        .advantage-desc p {
+            margin-bottom: 0.4rem;
+            padding-left: 0.5rem;
+            position: relative;
+        }
+
+        .advantage-desc p::before {
+            content: "•";
+            color: #4a90e2;
+            font-weight: bold;
+            position: absolute;
+            left: -0.2rem;
+        }
+
+        .highlight {
+            font-weight: 700;
+            color: #4a90e2;
+        }
+
+        /* 工具能力容器 - 星星评分样式 */
+        .tools-container {
+            background: #f8fafd;
+            border-radius: 20px;
+            padding: 1rem 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #edf2f7;
+        }
+
+        .tools-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .tools-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1e3347;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tools-title i {
+            color: #4a90e2;
+        }
+
+        .tool-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 0.85rem;
+        }
+
+        .tool-name {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .stars {
+            color: #ffc107;
+            letter-spacing: 2px;
+        }
+
+        .star-gray {
+            color: #e0e7ed;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 1.8rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 0.4rem;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 650;
+            color: #0a1c2c;
+        }
+
+        .item-sub {
+            font-weight: 500;
+            color: #4a6a85;
+            font-size: 0.95rem;
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            color: #6585a7;
+            background: #f0f5fb;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            color: #2d4055;
+            margin-top: 0.5rem;
+            padding-left: 0.2rem;
+            list-style-type: none;
+        }
+
+        .item-desc li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .item-desc li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #edf2f7;
+            margin: 1.2rem 0;
+        }
+
+        /* 证书标签样式 */
+        .cert-tag {
+            display: inline-block;
+            background-color: #e8f0fe;
+            color: #2c3e50;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.2rem 0.25rem;
+            border: 1px solid #cbd5e0;
+        }
+
+        @media (max-width: 700px) {
+            .resume-card {
+                grid-template-columns: 1fr;
+                border-radius: 20px;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #e0e7ed;
+            }
+            .avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-card">
+        <!-- ========= 左侧信息栏 ========= -->
+        <div class="sidebar">
+            <div class="profile-header">
+                <div class="avatar">
+                    <!-- 照片占位 - 请替换为真实图片URL -->
+                    <img src="https://via.placeholder.com/100/4a90e2/ffffff?text=PHOTO" alt="头像">
+                </div>
+                <div class="name">张易赟</div>
+                <div class="title">资深投放运营经理 · 8年经验</div>
+            </div>
+
+            <div class="contact-info">
+                <div class="section-title"><i class="far fa-address-card" style="margin-right: 6px;"></i> 联系方式</div>
+                <p><i class="fas fa-phone-alt"></i> +86 139 2898 7497</p>
+                <p><i class="far fa-envelope"></i> 398767417@qq.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 深圳 · 宝安</p>
+            </div>
+
+            <div>
+                <div class="section-title"><i class="fas fa-bullseye"></i> 项目经验</div>
+                <div>
+                    <span class="skill-tag">APP-浏览器/影音类/社交类</span>
+                    <span class="skill-tag">表单-小说/国学/情感类</span>
+                    <span class="skill-tag">电商-生活类/美妆类</span>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title"><i class="fas fa-chart-line"></i> 渠道经验</div>
+                <div>
+                    <span class="skill-tag">新媒体：抖音/小红书/广点通</span>
+                    <span class="skill-tag">搜索：百度/360/UC神马</span>
+                    <span class="skill-tag">厂商：华为/vivo/oppo</span>
+                </div>
+            </div>
+
+            <!-- 教育经历 -->
+            <div>
+                <div class="section-title"><i class="fas fa-graduation-cap"></i> 教育经历</div>
+                <div style="margin-bottom: 1rem;">
+                    <div style="font-weight: 650; color: #0a1c2c;">东华理工大学</div>
+                    <div style="font-size: 0.9rem; color: #4a6a85;">市场营销专业 · 全日制本科</div>
+                </div>
+            </div>
+
+            <!-- 语言能力 -->
+            <div>
+                <div class="section-title"><i class="fas fa-language"></i> 语言能力</div>
+                <p style="display: flex; justify-content: space-between; margin: 0.3rem 0;">
+                    <span>英语 (六级)</span> <span style="color:#4a90e2;">★★★★☆</span>
+                </p>
+                <p style="display: flex; justify-content: space-between; margin: 0.3rem 0;">
+                    <span>日语 (N3刷级ing)</span> <span style="color:#4a90e2;">★★☆☆☆</span>
+                </p>
+            </div>
+
+            <!-- 技能证书（已删除优秀员工文字） -->
+            <div>
+                <div class="section-title"><i class="fas fa-certificate"></i> 技能证书</div>
+                <div>
+                    <span class="cert-tag">快手中级证书</span>
+                    <span class="cert-tag">百度认证信息流资深营销顾问中级</span>
+                    <span class="cert-tag">百度认证营销顾问(SEM)中级</span>
+                </div>
+            </div>
+
+            <!-- 工具能力 -->
+            <div class="tools-container">
+                <div class="tools-header">
+                    <div class="tools-title">
+                        <i class="fas fa-tools"></i> 工具能力
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <span class="tool-name">Excel</span>
+                    <span class="stars">★★★★★</span>
+                </div>
+                <div class="tool-item">
+                    <span class="tool-name">PPT</span>
+                    <span class="stars">★★★★☆</span>
+                </div>
+                <div class="tool-item">
+                    <span class="tool-name">剪映</span>
+                    <span class="stars">★★☆☆☆</span>
+                </div>
+                <div class="tool-item">
+                    <span class="tool-name">HTML/CSS</span>
+                    <span class="stars">★★★★☆</span>
+                </div>
+                <div class="tool-item">
+                    <span class="tool-name">AI编程</span>
+                    <span class="stars">★☆☆☆☆</span>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title"><i class="fas fa-heart"></i> 兴趣</div>
+                <p>刷广告 · 音乐 · 阅读 · 旅行</p>
+            </div>
+        </div>
+
+        <!-- ========= 右侧主要内容区 ========= -->
+        <div class="main-content">
+            <!-- ===== 个人优势 (1x4纵向列表陈列) ===== -->
+            <div class="advantage-list">
+                <!-- 1. 全渠道规模化投放 -->
+                <div class="advantage-card">
+                    <div class="advantage-title">
+                        <i class="fas fa-chart-pie"></i> 全渠道规模化投放
+                    </div>
+                    <div class="advantage-desc">
+                        <p>操盘项目总消耗超<strong>1.2亿</strong>，精通字节/腾讯/小红书/百度生态，打造过<strong>日耗80W+</strong>(小说)爆款案例</p>
+                        <p>信息流：APP拉新 - 广点通单人日耗<strong>20W+(图文)/50W+(视频)</strong>；百度日耗<strong>5W+</strong>；团队高峰<strong>80W+</strong></p>
+                        <p>搜索：APP拉新 - QQ浏览器<strong>年度环比增长50.77%</strong></p>
+                    </div>
+                </div>
+
+                <!-- 2. 团队建设 & 流程优化 -->
+                <div class="advantage-card">
+                    <div class="advantage-title">
+                        <i class="fas fa-users"></i> 团队建设 & 流程优化
+                    </div>
+                    <div class="advantage-desc">
+                        <p>8年+团队管理经验，带领过5-10人团队，培养3名初级优化师晋升资深，老带新人才培养模式，团队<strong>年广告管理额过亿，0差评</strong></p>
+                        <p>建立「素材SOP-数据看板-三级复盘」管理体系，<strong>团队人效提升20%</strong>，项目平均交付周期缩短15%</p>
+                    </div>
+                </div>
+
+                <!-- 3. 素材整合创新 -->
+                <div class="advantage-card">
+                    <div class="advantage-title">
+                        <i class="fas fa-lightbulb"></i> 资源整合与创新
+                    </div>
+                    <div class="advantage-desc">
+                        <p>小说项目：测试书籍<strong>2000+</strong>，图片素材<strong>3W+</strong>，视频<strong>5000+</strong>，爆款素材产出效率提升<strong>20%</strong></p>
+                        <p>国学项目：根据人群属性及兴趣点出发，测试20类素材后实现项目0-1突破，逐步丰富视频素材类型，混剪→口播→剧情，逐步推进，实现月营业破千万，ROI>1.1</p>
+                        <p>搭建竞品监测体系，策略迭代速度领先同行<strong>1周+</strong></p>
+                    </div>
+                </div>
+
+                <!-- 4. 增长策略突破 -->
+                <div class="advantage-card">
+                    <div class="advantage-title">
+                        <i class="fas fa-rocket"></i> 增长策略突破
+                    </div>
+                    <div class="advantage-desc">
+                        <p>APP拉新，为实现调起减少用户流失，落地页版式优化20+种，<strong>转化提升8%</strong>；动态落地页实现千人千面，安装流失率下降<strong>25%</strong></p>
+                        <p>国学项目0-1冷启动，2个月突破，<strong>5个月实现抖音月耗破千万</strong>，最高单月日耗20W，个人贡献率<strong>40.95%</strong></p>
+                        <p>构建动态优化模型，AD成本下降<strong>15%</strong>，本地推成本下降<strong>25%</strong>，小红书ROI提升<strong>4%</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 工作经历 (按时间倒序) ===== -->
+            <div>
+                <h2 class="main-section-title"><i class="fas fa-briefcase" style="margin-right: 10px;"></i> 工作经历</h2>
+                
+                <!-- 1. 泽宇咨询 · 新媒体主管 -->
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">新媒体主管 · 泽宇咨询</span>
+                        <span class="item-date">2025.11 - 2025.12</span>
+                    </div>
+                    <ul class="item-desc">
+                        <li>带领5人团队统筹IP矩阵账号，负责小红书、广点通、来客渠道从0到1搭建，<strong>2个月内实现账号周内预付回款，ROI>6</strong></li>
+                        <li>优化日汇报流程，制定周内容采访计划，建立素材测试体系，通过拆解历史数据与竞品爆款，快速产出高转化文案脚本</li>
+                    </ul>
+                </div>
+
+                <!-- 2. 航行将凯 · 投放主管 -->
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">投放主管 · 航行将凯</span>
+                        <span class="item-date">2024.12 - 2025.02</span>
+                    </div>
+                    <ul class="item-desc">
+                        <li>负责线索投流工作，主投AD和本地推，对接小红书日常视频文案，<strong>接手后AD成本下降15%，本地推成本下降25%，小红书ROI提升4%</strong></li>
+                        <li>抖音方向：拆解付费用户需求，结合转化关键词创新素材类型，整合口播/剧情/多视角测试，通过数据反哺素材迭代</li>
+                        <li>小红书方向：品牌向与暴力推流并行，运用信息差打法+高密度干货+焦虑唤醒标题策略，<strong>入职第二个月整体数据量排名第二</strong></li>
+                        <li>参与内部流程优化，配合视频组优化工作流程，修改制定统计表格，提升团队协作效率</li>
+                    </ul>
+                </div>
+
+                <!-- 3. 十方融海 · 储备主管 -->
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">储备主管 · 十方融海</span>
+                        <span class="item-date">2023.05 - 2024.10</span>
+                    </div>
+                    <ul class="item-desc">
+                        <li>负责事业部从0到1搭建，以头条AD为主渠道，广点通、快手辅助，<strong>1个月完成媒体消耗目标后入抖，个人贡献率40.95%</strong></li>
+                        <li><strong>5个月完成项目推流0-1，年底月耗破千万</strong>，最高单月日耗20W，其中图文最高日耗4W</li>
+                        <li>管理2资深+2~3初级投放团队，对接设计/视频组脚本需求，建立多维度素材测试体系，提升爆款产出概率</li>
+                        <li>定期策略复盘，监控投放全链路数据，优化定向与出价模型，实现量级与成本最优平衡</li>
+                    </ul>
+                </div>
+
+                <!-- 4. 致维科技（北京） · 项目投放经理 -->
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">项目投放经理 · 致维科技（北京）</span>
+                        <span class="item-date">2018.06 - 2022.05</span>
+                    </div>
+                    <ul class="item-desc">
+                        <li><strong>团队管理</strong>：带领5人团队，负责项目全流程管理，<strong>累计业绩过亿，0差评</strong>；建立老带新人才培养模式，定期复盘交流</li>
+                        <li><strong>信息流项目（2000W）</strong>：负责QQ浏览器小说类推广，广点通单人图文日耗<strong>20W+</strong>，视频日耗<strong>50W+</strong>，团队高峰<strong>80W+</strong>；百度信息流单人日耗<strong>5W+</strong>，团队高峰<strong>30W+</strong></li>
+                        <li>优化落地页版式20+种，通过按钮测试及关键事件分析，<strong>整体转化提升8%</strong>；测试书籍2000+，图片素材3W+，视频5000+</li>
+                        <li><strong>搜索项目（6000-8000W）</strong>：QQ浏览器APP推广，<strong>年度环比新增激活增长50.77%</strong>；有效关键词从2k扩展至1W+，测试近10个行业词汇</li>
+                        <li>动态落地页实现千人千面，<strong>安装流失率下降25%</strong>；腾讯视频app下载新增激活增长12%，表单会员活动ROI>1，高峰日耗1W+，ROI达3</li>
+                        <li><strong>厂商项目（700W）</strong>：全民K歌小米渠道接手后<strong>成本下降5%</strong>，LTV高出KPI 3个百分点；通过数据分析优化优质版位素材</li>
+                        <li><strong><i class="fas fa-trophy" style="color: #ffc107;"></i> 荣誉：2020、2021连续两年获得公司“优秀员工”称号</strong></li>
+                    </ul>
+                </div>
+
+                <!-- 5. 升学教育 · SEM专员 -->
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">SEM专员 · 升学教育</span>
+                        <span class="item-date">2017.03 - 2018.05</span>
+                    </div>
+                    <ul class="item-desc">
+                        <li>负责SEM投流基础投放，分城市监控数据，<strong>深圳事业部TOP3流量贡献率</strong></li>
+                    </ul>
+                </div>
+
+                <!-- 6. 尚德教育 · 电话销售 -->
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">电话销售 · 尚德教育</span>
+                        <span class="item-date">2016.03 - 2017.02</span>
+                    </div>
+                    <ul class="item-desc">
+                        <li>运用“强化人群需求+截留话术”，<strong>入职第一天开单，月度销售前三</strong></li>
+                    </ul>
+                </div>
+
+                <!-- 7. 千视文化传媒 · 电话销售 -->
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">电销+会销 · 千视文化传媒</span>
+                        <span class="item-date">2015.03 - 2015.09</span>
+                    </div>
+                    <ul class="item-desc">
+                        <li>帮助10余家中小企业品牌赋能，通过商标冠名和传统媒体曝光提升品牌影响力</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 底部声明 -->
+            <hr>
+            <div style="text-align: center; color: #91a5bb; font-size: 0.8rem;">
+                <i class="far fa-copy"></i> 在线简历 · 持续更新 · 欢迎联系
+            </div>
+        </div>
+    </div>
+</body>
+</html>
